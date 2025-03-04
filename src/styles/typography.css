@@ -1,0 +1,108 @@
+@font-face {
+  font-family: 'Honest';
+  src: url('/fonts/Honest-Black.woff2') format('woff2'),
+      url('/fonts/Honest-Black.woff') format('woff');
+  font-weight: 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Honest';
+  src: url('/fonts/Honest-BlackItalic.woff2') format('woff2'),
+      url('/fonts/Honest-BlackItalic.woff') format('woff');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Honest';
+  font-weight: 900;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5.5vw, 4rem);
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+h4 {
+  font-size: clamp(2.25rem, 3vw, 3rem);
+  font-style: italic;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  position: relative;
+  appearance: none;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-weight: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  line-height: inherit;
+}
+
+.link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  column-gap: 0.35rem;
+  color: var(--color-text);
+  text-decoration: none;
+
+  svg {
+    margin-top: 4px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(
+        to left,
+        var(--color-border) 50%,
+        var(--color-border-hover) 50%
+      )
+      right;
+    background-size: 200%;
+    background-position: right;
+    transition: background-position 0.35s ease-in-out;
+  }
+
+  &:hover::after {
+    background-position: left;
+  }
+}
